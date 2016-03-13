@@ -1,28 +1,30 @@
 [submodule "sys"]
 	path = sys
 	url = https://github.com/gtk-rs/sys
-	branch = crate
 [submodule "glib"]
 	path = glib
 	url = https://github.com/gtk-rs/glib
-	branch = crate
 [submodule "cairo"]
 	path = cairo
 	url = https://github.com/gtk-rs/cairo
-	branch = crate
 [submodule "pango"]
 	path = pango
 	url = https://github.com/gtk-rs/pango
-	branch = crate
 [submodule "gdk"]
 	path = gdk
 	url = https://github.com/gtk-rs/gdk
-	branch = crate
 [submodule "gtk"]
 	path = gtk
 	url = https://github.com/gtk-rs/gtk
-	branch = crate
 [submodule "examples"]
 	path = examples
 	url = https://github.com/gtk-rs/examples
-	branch = crate
+[submodule "lgpl-docs"]
+	path = lgpl-docs
+	url = https://github.com/gtk-rs/lgpl-docs
+[submodule "gdk-pixbuf"]
+	path = gdk-pixbuf
+	url = https://github.com/gtk-rs/gdk-pixbuf
+[submodule "rustdoc-stripper"]
+	path = rustdoc-stripper
+	url = https://github.com/GuillaumeGomez/rustdoc-stripper
