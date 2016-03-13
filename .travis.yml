@@ -10,9 +10,11 @@ addons:
     - python3
 env:
   - GTK=3.4
-  - GTK=latest
+  - GTK=3.18
 script:
-  - rm -rf sys/gtk-sys
   - ./cargo-fixup.py
   - cd examples
   - ./build.sh
+  - cd ../gtk
+  - if [ "$GTK" = 3.4 ]; then cargo test --features embed-lgpl-docs; fi
+  - if [ "$GTK" = 3.18 ]; then PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig" cargo test --features "3.16 embed-lgpl-docs"; fi
