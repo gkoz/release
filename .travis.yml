@@ -17,4 +17,4 @@ script:
   - ./build.sh
   - cd ../gtk
   - if [ "$GTK" = 3.4 ]; then cargo test --features embed-lgpl-docs; fi
-  - if [ "$GTK" = 3.18 ]; then PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig" cargo test --features "3.16 embed-lgpl-docs"; fi
+  - if [ "$GTK" = 3.18 ]; then PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig" cargo test --features "v3_16 embed-lgpl-docs"; fi
