@@ -25,6 +25,3 @@
 [submodule "gdk-pixbuf"]
 	path = gdk-pixbuf
 	url = https://github.com/gtk-rs/gdk-pixbuf
-[submodule "rustdoc-stripper"]
-	path = rustdoc-stripper
-	url = https://github.com/GuillaumeGomez/rustdoc-stripper
