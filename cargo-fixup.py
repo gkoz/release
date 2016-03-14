@@ -67,26 +67,25 @@ for path in manifests():
 for path in crates.values():
 	manifest = open(os.path.join(path, CARGO_TOML), 'r')
 	with open(os.path.join(path, CARGO_TOML_NEW), 'w') as new_manifest:
-			group = None
-			crate = None
-			for line in manifest:
-				match = re_group.match(line)
+		group = None
+		crate = None
+		for line in manifest:
+			match = re_group.match(line)
+			if match:
+				group = match.group(1)
+				match = re_dependency.match(group)
 				if match:
-					group = match.group(1)
-					match = re_dependency.match(group)
-					if match:
-							crate = match.group(1)
-					else:
-							crate = None
-				if crate in crates:
-					match = re_git.match(line)
-					if match:
-						rel_path = os.path.relpath(crates[crate], path) \
-										.replace(os.path.sep, '/')
-						new_manifest.write(
-							'path = "%s"\n' % rel_path)
-						continue
-				new_manifest.write(line)
+					crate = match.group(1)
+				else:
+					crate = None
+			if crate in crates:
+				match = re_git.match(line)
+				if match:
+					rel_path = os.path.relpath(crates[crate], path) \
+									.replace(os.path.sep, '/')
+					new_manifest.write('path = "%s"\n' % rel_path)
+					continue
+			new_manifest.write(line)
 	manifest.close()
 	os.remove(os.path.join(path, CARGO_TOML))
 	os.rename(
