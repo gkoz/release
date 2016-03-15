@@ -21,7 +21,7 @@ install:
 
 build_script:
   - git submodule update --init
-  - python cargo-fixup.py
+  - c:\python35\python cargo-fixup.py
   - cd examples
   - cargo build
   - cargo build --features gtk_3_18
