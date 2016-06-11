@@ -13,6 +13,7 @@ env:
   - GTK=3.18
 script:
   - ./cargo-fixup.py
+  - ./cargo-crates-io-deps-only.py
   - cd examples
   - ./build.sh
   - cd ../gtk
