@@ -22,3 +22,6 @@
 [submodule "gdk-pixbuf"]
 	path = gdk-pixbuf
 	url = https://github.com/gtk-rs/gdk-pixbuf
+[submodule "gio"]
+	path = gio
+	url = https://github.com/gtk-rs/gio
