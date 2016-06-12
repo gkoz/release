@@ -78,12 +78,14 @@ for path in crates.values():
 					crate = match.group(1)
 				else:
 					crate = None
-			if crate in crates:
-				match = re_git.match(line)
-				if match:
+			match = re_git.match(line)
+			if match:
+				if crate in crates:
 					rel_path = os.path.relpath(crates[crate], path) \
 									.replace(os.path.sep, '/')
 					new_manifest.write('path = "%s"\n' % rel_path)
+					continue
+				else:
 					continue
 			new_manifest.write(line)
 	manifest.close()

@@ -1,0 +1,9 @@
+cairo https://github.com/gtk-rs/cairo 831e363d738e7331a4b336dd5e175b8db8ea40c3
+examples https://github.com/gtk-rs/examples d7ab95ee8af19e8fedf33fa80f2748d71d9d48a1
+gdk https://github.com/gtk-rs/gdk b9d3fb7624b822f39a3f326b594d4724c2bd6b2a
+gdk-pixbuf https://github.com/gtk-rs/gdk-pixbuf c50e5069198ff4773b4f94cc662f55c7aca5c1dc
+glib https://github.com/gtk-rs/glib 046494fd6a53340b1d14da7d3530e191e74bc41f
+gio https://github.com/gtk-rs/gio 8c9e5eece2c2d6d4342c65a7362fb957ca8861b6
+gtk https://github.com/gtk-rs/gtk 3659912af2b9473e0de2cef5080819b9416edf82
+lgpl-docs https://github.com/gtk-rs/lgpl-docs f162a719908480342829a811e01c64060c30a19f
+pango https://github.com/gtk-rs/pango fb3856212471c951c74bcaa65d1ce18d54a2add1
