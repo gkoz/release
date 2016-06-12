@@ -1,5 +1,9 @@
 environment:
   matrix:
+    - RUST: nightly
+      BITS: 32
+    - RUST: nightly
+      BITS: 64
     - RUST: stable
       BITS: 32
     - RUST: stable
@@ -20,9 +24,9 @@ install:
   - pacman --noconfirm -S mingw-w64-%ARCH%-gtk3
 
 build_script:
-  - git submodule update --init
-  - c:\python35\python cargo-fixup.py
-  - c:\python35\python cargo-crates-io-deps-only.py
+  - c:\python35\python crates.py checkout crates.txt build
+  - cd build
+  - c:\python35\python ..\cargo-fixup.py
   - cd examples
   - cargo build
   - cargo build --features gtk_3_18
