@@ -17,15 +17,26 @@ def manifests():
 
 re_git_or_path = re.compile('^\s*(git|path)\s*=.*$')
 
+has_changed_something = False
 for path in manifests():
 	manifest = open(os.path.join(path, CARGO_TOML), 'r')
+	has_change_something = False
 	with open(os.path.join(path, CARGO_TOML_NEW), 'w') as new_manifest:
 		for line in manifest:
 			if re_git_or_path.match(line):
+				has_change_something = True
 				continue
 			new_manifest.write(line)
+		if has_change_something:
+			print("Updating '%s'" % os.path.join(path, CARGO_TOML))
+			has_changed_something = True
 	manifest.close()
-	os.remove(os.path.join(path, CARGO_TOML))
-	os.rename(
-		os.path.join(path, CARGO_TOML_NEW),
-		os.path.join(path, CARGO_TOML))
+	if has_change_something:
+		os.remove(os.path.join(path, CARGO_TOML))
+		os.rename(
+			os.path.join(path, CARGO_TOML_NEW),
+			os.path.join(path, CARGO_TOML))
+	else:
+		os.remove(os.path.join(path, CARGO_TOML_NEW))
+if not has_changed_something:
+	print("Everything was already up-to-date")
